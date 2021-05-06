@@ -21,21 +21,21 @@ let data = [{item:'get milk'},{item:'walk dog'},{item:'code'}];
 
 
 module.exports = function(app) {
-    app.get('/todo', function(req,res) {
+    app.get('/', function(req,res) {
         Todo.find({},(err,data) => {
             if(err) throw err;
             res.render('todo',{todos:data});
         })
     });
 
-    app.post('/todo', function(req,res) {
+    app.post('/', function(req,res) {
         const newTodo = Todo(req.body).save((err,data) => {
             if(err) throw err;
             res.json({todos:data});
         });
     });
 
-    app.delete('/todo/:item', function(req,res) {
+    app.delete('/:item', function(req,res) {
         Todo.find({item:req.params.item.replace(/\-/g," ")}).deleteOne((err, data) => {
             if(err) throw err;
             res.json({todos:data});
