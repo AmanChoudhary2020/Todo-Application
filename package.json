@@ -4,7 +4,7 @@
   "description": "Todo App",
   "main": "app.js",
   "scripts": {
-    "start": "node index",
+    "start": "node app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Aman Choudhary",
