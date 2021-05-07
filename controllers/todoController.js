@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const uri = 'mongodb+srv://test:test@todo.cqrnb.mongodb.net/todo?retryWrites=true&w=majority';
 
 const client = async () => {
-    await mongoose.connect(uri,{ useNewUrlParser: true });
+    await mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true});
     console.log('db connected');
 }
 
